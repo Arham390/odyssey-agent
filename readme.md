@@ -13,15 +13,12 @@
 
 Odyssey follows a **State Graph** architecture. Instead of a single LLM trying to do everything, the system splits the task into specialized nodes that pass data via a shared `TripState`.
 
-[Image of AI travel planner workflow]
-
-```mermaid
 graph TD
-    Start([User Request]) --> A[Node: Flight Search]
-    A --> B[Node: Hotel Search]
-    B --> C[Node: Activity Search]
-    C --> D[Node: Itinerary Compiler]
-    D --> End([Final PDF Plan])
+Start([User Request]) --> A[Node: Flight Search]
+A --> B[Node: Hotel Search]
+B --> C[Node: Activity Search]
+C --> D[Node: Itinerary Compiler]
+D --> End([Final PDF Plan])
 Flight Node: Uses TavilySearch to find real-time flight prices and schedules.
 
 Hotel Node: Scans for accommodation matching the user's budget and location preferences.
@@ -40,31 +37,32 @@ Framework: LangGraph (Stateful agent orchestration)
 Environment: Python 3.10+
 
 ⚡ Quick Start
+
 1. Clone the Repository
-Bash
+   Bash
 
 git clone [https://github.com/YOUR_USERNAME/odyssey-agent.git](https://github.com/YOUR_USERNAME/odyssey-agent.git)
-cd odyssey-agent
-2. Set Up Environment
+cd odyssey-agent 2. Set Up Environment
 Bash
 
 python -m venv venv
+
 # Windows
+
 venv\Scripts\activate
+
 # Mac/Linux
-source venv/bin/activate
-3. Install Dependencies
+
+source venv/bin/activate 3. Install Dependencies
 Bash
 
-pip install -r requirements.txt
-4. Configure API Keys
+pip install -r requirements.txt 4. Configure API Keys
 Create a .env file in the root directory:
 
 Ini, TOML
 
-GROQ_API_KEY="gsk_..."
-TAVILY_API_KEY="tvly-..."
-5. Run the Agent
+GROQ*API_KEY="gsk*..."
+TAVILY_API_KEY="tvly-..." 5. Run the Agent
 Bash
 
 python travel_agent.py
@@ -80,12 +78,17 @@ Markdown
 # 🇯🇴 3-Day Kyoto Itinerary: History & Serenity
 
 ## ✈️ Logistics
-* **Flight Estimate:** $850 (Round trip via ANA)
-* **Accommodation:** "The Pocket Hotel Kyoto" (Budget-friendly, near train station)
+
+- **Flight Estimate:** $850 (Round trip via ANA)
+- **Accommodation:** "The Pocket Hotel Kyoto" (Budget-friendly, near train station)
 
 ## 🗓️ Day 1: The Historical Heart
-* **Morning:** Visit **Kinkaku-ji (Golden Pavilion)**. Arrive at 9:00 AM to beat the crowd.
-* **Lunch:** Matcha Soba at "Omen" near the Philosopher's Path.
-* **Afternoon:** Walk the **Fushimi Inari Shrine** gates.
-* ...
+
+- **Morning:** Visit **Kinkaku-ji (Golden Pavilion)**. Arrive at 9:00 AM to beat the crowd.
+- **Lunch:** Matcha Soba at "Omen" near the Philosopher's Path.
+- **Afternoon:** Walk the **Fushimi Inari Shrine** gates.
+- ...
+
+```
+
 ```
